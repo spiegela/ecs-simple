@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
   dir = "#{ENV['PWD']}/.vagrant/additional-disks"
   Dir.mkdir dir unless File.directory?(dir)
 
-  config.vm.network "private_network", ip: "192.168.81.2"
+  config.vm.network "public_network", ip: "192.168.80.2"
 
   config.vm.provider :vmware_fusion do |v|
     file_to_disk = "#{dir}/hd2.vmdk"

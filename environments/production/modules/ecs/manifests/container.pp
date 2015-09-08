@@ -47,15 +47,16 @@ define ecs::container(
   ecs::volume {$disks: directory => $directory}
 
   docker::run { $container_name:
-    image      => $image_name,
-    volumes    => [ "${directory}/disks:/disks:rw",
-                    "${directory}/host:/host",
-                    "${directory}/data:/data:rw",
-                    "${directory}/logs:/var/log"
-                  ],
-    net        => 'host',
-    env        => $env,
-    require    => Docker::Image[$image_name]
+    image   => $image_name,
+    volumes => [ "${directory}/disks:/disks:rw",
+                 "${directory}/host:/host",
+                 "${directory}/data:/data:rw",
+                 "${directory}/logs:/var/log"
+               ],
+    net     => 'host',
+    ports   => [64443, 4443, 9011, 9020, 9024, 443],
+    env     => $env,
+    require => Docker::Image[$image_name]
   }
 
 }
