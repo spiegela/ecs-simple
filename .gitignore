@@ -1,0 +1,6 @@
+.DS_Store
+*.swp
+*.rpm
+request_body.tmp
+*.cer
+.vagrant
