@@ -10,6 +10,17 @@ $ vagrant up
 Yes, that's it.  Feel free to peruse the puppet manifests & shell scripts to
 see what's going on under the covers.
 
+Well Almost
+-----------
+
+One item that you may need to customize is in the Puppet manifest,
+`environments/production/manifests.site.pp`.  Sometimes if the Ethernet
+interface is different, it'll need to by updated.  There's a comment in the
+manifest to that effect.
+
+I'm pretty sure, I'll get that ironed out in Puppet, so that you don't have to
+worry about it in the future.
+
 EMC Employees
 -------------
 
